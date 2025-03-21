@@ -92,3 +92,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <img src="../assets/images/sweetDiscovery/bread1.jpg" alt="Page 1 Image 3">
     `;
 });
+
+document.getElementById('productsButton').addEventListener('click', function() {
+    window.location.href = "./Products/sweetDiscoveryProducts.html"; // Or window.open("your-link-url", "_blank"); for a new tab
+});

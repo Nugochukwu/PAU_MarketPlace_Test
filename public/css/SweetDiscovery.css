@@ -21,24 +21,15 @@ header {
     margin: 0 auto; /* This centers the section */
 }
 
-h1 {
-    padding: 20px;
+.banner {
+    background-color: #3498db; /* Example banner color */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle drop shadow */
+    color: white;
+    padding: 20px 0;
 }
 
-.slider-container {
-    width: 100%;
-    overflow: hidden;
-}
-
-.slider {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
-
-.slider img {
-    width: 50%;
-    flex-shrink: 0;
-    display: block; /* added to prevent extra space under image */
+.banner h1 {
+    margin: 0;
 }
 
 .events-deals, .contact {
@@ -52,17 +43,58 @@ h1 {
     padding: 15px;
 }
 
-.banner {
-    background-color: #3498db; /* Example banner color */
+h1 {
+    padding: 20px;
+}
+
+#linkButton {
+    padding: 10px 20px;
+    background-color: #3498db;
     color: white;
-    padding: 20px 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
 }
 
-.banner h1 {
-    margin: 0;
+#linkButton:hover {
+    background-color: #093451;
+}
+.navButton{
+    border: none;
+    border-radius: 5%;
+    color: white;
+    font-size: 16px;
+    padding: 20px;
+    background-color: #119cf9;
+}
+.navButton:hover {
+    cursor: pointer;
+    font-size: 18px;
+    background-color: #1373b3;
+}
+.slider-container {
+    width: 100%;
+    overflow: hidden;
 }
 
-/* SweetDiscovery.css (Additions) */
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.slider img {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle drop shadow */
+    border-radius: 8px; /* Optional: adds rounded corners for a softer look */
+    background-color: white; /* optional: adds a white background to make the shadow more visible */
+    padding: 10px;
+    margin: 10px;
+    width: 50%;
+    flex-shrink: 0;
+    display: block;
+}
 
 .offering-slider-container {
     width: 100%;
@@ -73,9 +105,16 @@ h1 {
 .offering-slider {
     display: flex;
     transition: transform 0.8s ease-in-out;
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 .offering-slider img {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle drop shadow */
+    border-radius: 8px; /* Optional: adds rounded corners for a softer look */
+    background-color: white; /* optional: adds a white background to make the shadow more visible */
+    margin: 10px;
+    padding: 10px;
     width: 50%;
     flex-shrink: 0;
     display: block; /* added to prevent extra space under image */
