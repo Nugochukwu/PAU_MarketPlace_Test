@@ -1,33 +1,77 @@
-/* script.js */
+const nav = document.querySelector(".nav"),
+    searchIcon = document.querySelector("#searchIcon"),
+    navOpenBtn = document.querySelector(".navOpenBtn"),
+    navCloseBtn = document.querySelector(".navCloseBtn");
 
-const navbar = document.getElementById('navbar');
+let navOpenTimeout;
+let navCloseTimeout;
 
-document.addEventListener('mousemove', (e) => {
-    if (window.innerWidth > 768) { // Desktop behavior
-        if (e.clientX < 10) {
-            navbar.style.left = '0';
-        } else if (e.clientX > 200) {
-            navbar.style.left = '-200px';
+searchIcon.addEventListener("click", () => {
+    nav.classList.toggle("openSearch");
+    nav.classList.remove("openNav");
+    if (nav.classList.contains("openSearch")) {
+        return searchIcon.classList.replace("uil-search", "uil-times");
+    }
+    searchIcon.classList.replace("uil-times", "uil-search");
+});
+
+navOpenBtn.addEventListener("click", () => {
+    clearTimeout(navCloseTimeout);
+    if (!nav.classList.contains("openNav")) {
+        nav.classList.add("openNav"); // Open immediately
+        nav.classList.remove("openSearch");
+        searchIcon.classList.replace("uil-times", "uil-search");
+    }
+});
+
+navCloseBtn.addEventListener("click", () => {
+    clearTimeout(navOpenTimeout);
+    navCloseTimeout = setTimeout(() => {
+        nav.classList.remove("openNav");
+    }, 300);
+});
+
+document.addEventListener("mousemove", (event) => {
+    if (event.clientX <= 5 && !nav.classList.contains("openSearch")) {
+        clearTimeout(navCloseTimeout);
+        if (!nav.classList.contains("openNav")) {
+            clearTimeout(navOpenTimeout);
+            navOpenTimeout = setTimeout(() => {
+                nav.classList.add("openNav");
+                nav.classList.remove("openSearch");
+                searchIcon.classList.replace("uil-times", "uil-search");
+            }, 150);
         }
+    } else {
+        clearTimeout(navOpenTimeout);
     }
 });
 
-document.addEventListener('scroll', () => {
-    if (window.innerWidth <= 760) { // Mobile behavior
-        if (window.scrollY < 10) {
-            navbar.style.top = '60px'; // Show below header
-        } else {
-            navbar.style.top = '-60px'; // Hide above header
-        }
+nav.addEventListener("mouseleave", () => {
+    if (!nav.classList.contains("openSearch")) {
+        clearTimeout(navOpenTimeout);
+        navCloseTimeout = setTimeout(() => {
+            nav.classList.remove("openNav");
+        }, 300);
     }
 });
 
-navbar.addEventListener('mouseleave', () => {
-    if (window.innerWidth > 768) {
-        navbar.style.left = '-200px';
-    }
-});
+//ads 
+document.addEventListener('DOMContentLoaded', function() {
+  const popupAd = document.getElementById('popup-ad');
+  const closeBtn = document.getElementById('close-popup');
 
+  // Show the popup after a delay (e.g., 3 seconds)
+  setTimeout(function() {
+      popupAd.style.display = 'block';
+  }, 2000);
+
+  // Close the popup when the close button is clicked
+  closeBtn.addEventListener('click', function() {
+      popupAd.style.display = 'none';
+  });
+});
+//main page
 const iframe = document.getElementById('contentFrame');
     const fullPageButton = document.getElementById('fullPageButton');
     const navLinks = document.querySelectorAll('#navbar a');
