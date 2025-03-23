@@ -7,14 +7,20 @@
     font-family: "Poppins", sans-serif;
 }
 body {
-    background: #f0faff;
+    background: #f9f9f9;
+}
+footer {
+    padding: 10px; /* Reduced padding from the default */
+    text-align: center;
+    background-color: #000000; /* Example background color */
+    color: #ffffff; /* Example text color */
 }
 iframe {
     width: 100%; /* Increase width to fill more space */
     height: calc(100vh - 100px); /* Fill most of the viewport height */
     border: none;
     display: block;
-    margin: 100px auto; /* Center with top margin */
+    margin-top: 80px; /* Center with top margin */
 }
 .content {
     display: flex;
