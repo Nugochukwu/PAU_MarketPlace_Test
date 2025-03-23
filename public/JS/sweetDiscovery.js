@@ -80,19 +80,6 @@ function sendWhatsAppPicture() {
     const whatsappLink = `whatsapp://send?phone=${phoneNumber}&text=${encodedMessage}`; // Changed to whatsapp://
     window.open(whatsappLink, "_blank");
 }
-
-document.addEventListener('DOMContentLoaded', function() {
-    const pageTitle = document.getElementById('pageTitle');
-    pageTitle.textContent = "Page 1 - Delicious Treats";
-
-    const slider = document.getElementById('pageSlider');
-    slider.innerHTML = `
-        <img src="../assets/images/sweetDiscovery/bread1.jpg" alt="Page 1 Image 1">
-        <img src="../assets/images/sweetDiscovery/bread1.jpg" alt="Page 1 Image 2">
-        <img src="../assets/images/sweetDiscovery/bread1.jpg" alt="Page 1 Image 3">
-    `;
-});
-
 document.getElementById('productsButton').addEventListener('click', function() {
     window.location.href = "./Products/sweetDiscoveryProducts.html"; // Or window.open("your-link-url", "_blank"); for a new tab
 });

@@ -30,6 +30,7 @@ header {
 
 .banner h1 {
     margin: 0;
+    font-size: 80px;
 }
 
 .events-deals, .contact {
@@ -60,18 +61,29 @@ h1 {
 #linkButton:hover {
     background-color: #093451;
 }
-.navButton{
-    border: none;
-    border-radius: 5%;
-    color: white;
-    font-size: 16px;
+.nav-bar{
     padding: 20px;
-    background-color: #119cf9;
+    background-color: white;
 }
-.navButton:hover {
-    cursor: pointer;
-    font-size: 18px;
-    background-color: #1373b3;
+.nav-bar nav {
+    display: flex; /* Makes the nav element a flex container */
+    justify-content: center; /* Centers the flex items horizontally */
+}
+nav a {
+    /* Basic styling */
+    padding: 10px 15px;
+    margin: 5px;
+    text-decoration: none; /* Remove underlines */
+    color: #ffffff; /* Text color */
+    background-color: #3498db; /* Background color */
+    border: 1px solid #ccc; /* Border */
+    border-radius: 5px; /* Rounded corners */
+}
+
+nav a:hover {
+    /* Hover effect */
+    background-color: #e0e0e0;
+    padding: 15px ;
 }
 .slider-container {
     width: 100%;
@@ -96,10 +108,23 @@ h1 {
     display: block;
 }
 
+.scrollable {
+    overflow-x: auto;
+    white-space: nowrap; /* Prevent images from wrapping */
+    scroll-snap-type: x mandatory; /* Snap to images */
+    -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
+}
+
+.scrollable img {
+    scroll-snap-align: start; /* Snap to the start of each image */
+    display: inline-block; /* Allow horizontal layout */
+}
+
 .offering-slider-container {
     width: 100%;
     overflow: hidden;
     margin-bottom: 10px;
+    overflow: hidden;
 }
 
 .offering-slider {
@@ -118,6 +143,18 @@ h1 {
     width: 50%;
     flex-shrink: 0;
     display: block; /* added to prevent extra space under image */
+}
+
+.offering-slider.scrollable {
+    overflow-x: auto;
+    white-space: nowrap;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+
+.offering-slider.scrollable img {
+    scroll-snap-align: start;
+    display: inline-block;
 }
 
 .about, .offerings {

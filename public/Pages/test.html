@@ -3,83 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sweet Discovery</title>
+    <title>*****</title>
     <link rel="stylesheet" href="../css/SweetDiscovery.css">
 </head>
 <body class="page-1">
+
+    <!--Header-->
+    <div data-include="../Fragments/header.html"
+        data-header-title="Sweet Discovery"
+        data-images='[
+            {"src": "../assets/images/sweetDiscovery/samosa1.jpg", "alt": "Delicious Samosa 1"},
+            {"src": "../assets/images/sweetDiscovery/samosa1.jpg", "alt": "Delicious Samosa 2"},
+            {"src": "../assets/images/sweetDiscovery/samosa1.jpg", "alt": "Delicious Samosa 3"},
+            {"src": "../assets/images/sweetDiscovery/samosa2.jpg", "alt": "Delicious Samosa 4"},
+            {"src": "../assets/images/sweetDiscovery/samosa2.jpg", "alt": "Delicious Samosa 5"},
+            {"src": "../assets/images/sweetDiscovery/samosa2.jpg", "alt": "Delicious Samosa 6"},
+            {"src": "../assets/images/sweetDiscovery/samosa2.jpg", "alt": "Delicious Samosa 7"}
+        ]'>
+    </div>
+
+    <!--Nav-->
+    <div data-include="../Fragments/nav.html"
+     data-nav-buttons='[
+            {"text": "Home", "link": "/"},
+            {"text": "Products", "link": "./Products/sweetDiscoveryProducts.html"},
+            {"text": "About Us", "link": "/about"}
+        ]'>
+    </div>
     
-    <div data-include="fragments/header.html"></div>
-    <section class="about">
-        <h2>Welcome to Sweet Discovery!</h2>
-        <p>
-            At Sweet Discovery, we believe in the joy of discovering delicious treats. We specialize in handcrafted desserts that are made with the finest ingredients and a touch of passion. Our mission is to bring you sweet moments that brighten your day. Whether you're celebrating a special occasion or simply indulging in a sweet craving, we have something perfect for you.
-        </p>
-    </section>
+    <!--About-->
+    <div data-include="../Fragments/about.html"
+     data-about-title="Our Story"
+     data-about-content="At Sweet Discovery, we believe in the joy of discovering delicious treats. We specialize in handcrafted desserts that are made with the finest ingredients and a touch of passion. Our mission is to bring you sweet moments that brighten your day. Whether you're celebrating a special occasion or simply indulging in a sweet craving, we have something perfect for you.">
+</div>
 
-    <section class="offerings">
-        <h2>What We Offer</h2>
-        <div class="offerings-grid">
-            <div class="offering">
-                <h3>Handcrafted Cakes</h3>
-                <div class="offering-slider-container">
-                    <div class="offering-slider">
-                        <img src="../assets/images/sweetDiscovery/bread1.jpg" alt="Cake 1">
-                        <img src="../assets/images/sweetDiscovery/bread1.jpg" alt="Cake 2">
-                        <img src="../assets/images/sweetDiscovery/bread1.jpg" alt="Cake 3">
-                    </div>
-                </div>
-                <p>Our signature cakes are baked fresh daily, offering a variety of flavors and designs to suit any taste.</p>
-            </div>
-            <div class="offering">
-                <h3>Gourmet Pastries</h3>
-                <div class="offering-slider-container">
-                    <div class="offering-slider">
-                        <img src="../assets/images/sweetDiscovery/bread1.jpg" alt="Pastry 1">
-                        <img src="../assets/images/sweetDiscovery/bread1.jpg" alt="Pastry 2">
-                        <img src="../assets/images/sweetDiscovery/bread1.jpg" alt="Pastry 3">
-                    </div>
-                </div>
-                <p>Indulge in our selection of flaky croissants, buttery pastries, and delectable tarts.</p>
-            </div>
-            <div class="offering">
-                <h3>Custom Desserts</h3>
-                <div class="offering-slider-container">
-                    <div class="offering-slider">
-                        <img src="../assets/images/sweetDiscovery/zobo.jpg" alt="Custom 1">
-                        <img src="custom2.jpg" alt="Custom 2">
-                        <img src="../assets/images/sweetDiscovery/zobo.jpg" alt="Custom 3">
-                    </div>
-                </div>
-                <p>We create personalized desserts for weddings, birthdays, and other special events. Let us turn your vision into a sweet reality.</p>
-            </div>
-            <div class="offering">
-                <h3>Seasonal Treats</h3>
-                <div class="offering-slider-container">
-                    <div class="offering-slider">
-                        <img src="seasonal1.jpg" alt="Seasonal 1">
-                        <img src="seasonal2.jpg" alt="Seasonal 2">
-                        <img src="seasonal3.jpg" alt="Seasonal 3">
-                    </div>
-                </div>
-                <p>Enjoy our limited-time seasonal desserts, featuring fresh ingredients and festive flavors.</p>
-            </div>
-        </div>
-    </section>
-    <button onclick="sendWhatsAppMessage()">Send WhatsApp Message</button>
-    <button onclick="sendWhatsAppPicture()">Send WhatsApp Picture</button>
-    <section class="events-deals">
-        <h2>Upcoming Events & Deals</h2>
-        <div id="events-container">
-        </div>
-    </section>
+    <!--Offerings-->
+    <div data-include="../Fragments/offerings.html"
+        data-offerings-title="Our Delicious Treats"
+        data-offerings='[
+            {
+                "title": "Handcrafted Cakes",
+                "images": [
+                    {"src": "../assets/images/sweetDiscovery/bread1.jpg", "alt": "Cake 1"},
+                    {"src": "../assets/images/sweetDiscovery/bread1.jpg", "alt": "Cake 2"},
+                    {"src": "../assets/images/sweetDiscovery/bread1.jpg", "alt": "Cake 3"}
+                ],
+                "description": "Our signature cakes are baked fresh daily, offering a variety of flavors and designs to suit any taste."
+            }
+        ]'>
+    </div>
 
-    <section class="contact">
-        <h2>Contact Us</h2>
-        <p>Email: info@sweetdiscovery.com</p>
-        <p>Phone: +1 123-456-7890</p>
-        <p>Address: 123 Main St, City, State</p>
-    </section>
+    <!--Events-->
+    <div data-include="../Fragments/events.html"
+        data-events='[]'>
+    </div>
+    <!--example event-->    <!-- 
+    <div data-include="../Fragments/events.html"
+        data-events='[
+            { "title": "Event Title 1", "description": "Description of event 1. Date: [Date]", "image": "../assets/images/sweetDiscovery/event1.jpg" },
+            { "title": "Event Title 2", "description": "Description of event 2. Date: [Date]", "image": "../assets/images/sweetDiscovery/event2.jpg" },
+            { "title": "Event Title 3", "description": "Description of event 3. Date: [Date]", "image": "../assets/images/sweetDiscovery/event3.jpg" }
+        ]'>
+    </div>  -->
+    
+
+
+    <!--Contact Information-->
+    <div data-include="../Fragments/contact.html" 
+    data-contact-content1="Email: info@sweetdiscovery.com"
+    data-contact-content2="Phone: +1 123-456-7890"
+    data-contact-content3="Address: 123 Main St, City, State"></div>
+
+    <!--Importing Scripts-->
     <script src="../JS/include.js"></script>
-    <script src="../JS/sweetDiscovery.js"></script>
+    <script src="../JS/fragment.js"></script>
 </body>
 </html>
