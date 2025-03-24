@@ -57,20 +57,6 @@ nav.addEventListener("mouseleave", () => {
     }
 });
 
-//ads 
-document.addEventListener('DOMContentLoaded', function() {
-    const popupAd = document.getElementById('popup-ad');
-    const closeBtn = document.getElementById('close-popup');
-
-    setTimeout(function() {
-        popupAd.style.display = 'block';
-    }, 2000);
-
-    closeBtn.addEventListener('click', function() {
-        popupAd.style.display = 'none';
-    });
-});
-
 //main page
 const iframe = document.getElementById('contentFrame');
 const fullPageButton = document.getElementById('fullPageButton');
