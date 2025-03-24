@@ -5,9 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Products</title>
     <link rel="stylesheet" href="../../css/Products/SweetDiscoveryProducts.css">
+    <link rel="stylesheet" href="../../css/SweetDiscovery.css">
 </head>
 <body>
-
+    <div data-include="../../Fragments/nav.html"
+    data-nav-buttons='[
+           {"text": "Home", "link": "../../Pages/SweetDiscovery.html"},
+           {"text": "Products", "link": "./Products/sweetDiscoveryProducts.html"},
+           {"text": "About Us", "link": "/about"}
+       ]'>
+   </div>
     <h1>Our Products</h1>
     <div><a href="../"></a></div>
     <div class="product-list">
@@ -36,8 +43,9 @@
         </div>
 
         </div>
-
+    <script src="../../JS/include.js"></script>
+    <script src="../../JS/fragment.js"></script>
     <script src="../../JS/Products/sweetDiscoveryProducts.js"></script>
-
+    
 </body>
 </html>
