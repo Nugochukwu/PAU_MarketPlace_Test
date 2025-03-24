@@ -1,7 +1,8 @@
 const nav = document.querySelector(".nav"),
     searchIcon = document.querySelector("#searchIcon"),
     navOpenBtn = document.querySelector(".navOpenBtn"),
-    navCloseBtn = document.querySelector(".navCloseBtn");
+    navCloseBtn = document.querySelector(".navCloseBtn"),
+    navLinks = document.querySelectorAll(".nav-links li a");
 
 let navOpenTimeout;
 let navCloseTimeout;
@@ -18,7 +19,7 @@ searchIcon.addEventListener("click", () => {
 navOpenBtn.addEventListener("click", () => {
     clearTimeout(navCloseTimeout);
     if (!nav.classList.contains("openNav")) {
-        nav.classList.add("openNav"); // Open immediately
+        nav.classList.add("openNav");
         nav.classList.remove("openSearch");
         searchIcon.classList.replace("uil-times", "uil-search");
     }
@@ -32,7 +33,7 @@ navCloseBtn.addEventListener("click", () => {
 });
 
 document.addEventListener("mousemove", (event) => {
-    if (event.clientX <= 5 && !nav.classList.contains("openSearch")) {
+    if (event.clientX <= 5 && !nav.classList.contains("openSearch") && !nav.classList.contains("openNav")) { //added check
         clearTimeout(navCloseTimeout);
         if (!nav.classList.contains("openNav")) {
             clearTimeout(navOpenTimeout);
@@ -58,57 +59,52 @@ nav.addEventListener("mouseleave", () => {
 
 //ads 
 document.addEventListener('DOMContentLoaded', function() {
-  const popupAd = document.getElementById('popup-ad');
-  const closeBtn = document.getElementById('close-popup');
+    const popupAd = document.getElementById('popup-ad');
+    const closeBtn = document.getElementById('close-popup');
 
-  // Show the popup after a delay (e.g., 3 seconds)
-  setTimeout(function() {
-      popupAd.style.display = 'block';
-  }, 2000);
+    setTimeout(function() {
+        popupAd.style.display = 'block';
+    }, 2000);
 
-  // Close the popup when the close button is clicked
-  closeBtn.addEventListener('click', function() {
-      popupAd.style.display = 'none';
-  });
+    closeBtn.addEventListener('click', function() {
+        popupAd.style.display = 'none';
+    });
 });
+
 //main page
 const iframe = document.getElementById('contentFrame');
-    const fullPageButton = document.getElementById('fullPageButton');
-    const navLinks = document.querySelectorAll('#navbar a');
+const fullPageButton = document.getElementById('fullPageButton');
 
-    function updateButtonLink() {
-        if (iframe && fullPageButton) {
-            fullPageButton.dataset.href = iframe.src;
-        }
+function updateButtonLink() {
+    if (iframe && fullPageButton) {
+        fullPageButton.dataset.href = iframe.src;
     }
+}
 
-    // Initial update
-    updateButtonLink();
+updateButtonLink();
 
-    // MutationObserver to monitor src changes
-    const observer = new MutationObserver(mutations => {
-        mutations.forEach(mutation => {
-            if (mutation.attributeName === 'src') {
-                updateButtonLink();
-            }
-        });
-    });
-
-    observer.observe(iframe, { attributes: true, attributeFilter: ['src'] });
-
-    // Navigation link click event
-    navLinks.forEach(link => {
-        link.addEventListener('click', function(event) {
-            iframe.src = this.href;
-            iframe.dataset.initialSrc = this.dataset.initialSrc;
+const observer = new MutationObserver(mutations => {
+    mutations.forEach(mutation => {
+        if (mutation.attributeName === 'src') {
             updateButtonLink();
-        });
-    });
-
-    // Button click event
-    fullPageButton.addEventListener('click', function() {
-        const href = this.dataset.href;
-        if (href) {
-            window.open(href, "_blank");
         }
     });
+});
+
+observer.observe(iframe, { attributes: true, attributeFilter: ['src'] });
+
+navLinks.forEach(link => {
+    link.addEventListener('click', function(event) {
+        iframe.src = this.href;
+        iframe.dataset.initialSrc = this.dataset.initialSrc;
+        updateButtonLink();
+        nav.classList.remove("openNav");
+    });
+});
+
+fullPageButton.addEventListener('click', function() {
+    const href = this.dataset.href;
+    if (href) {
+        window.open(href, "_blank");
+    }
+});

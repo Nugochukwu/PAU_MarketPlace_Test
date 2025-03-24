@@ -7,7 +7,7 @@
     font-family: "Poppins", sans-serif;
 }
 body {
-    background: #f9f9f9;
+    background: #e4e4e4;
 }
 footer {
     padding: 10px; /* Reduced padding from the default */
@@ -134,7 +134,7 @@ a {
 }
 .nav.openNav .nav-links {
     left: -5px;
-    animation: navLinksBounce 0.8s ease-in-out;
+    animation: navLinksBounce 0.7s ease-in-out;
 }
 .nav .navOpenBtn {
     color: #fff;
